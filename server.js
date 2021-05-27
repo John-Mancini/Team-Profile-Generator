@@ -7,6 +7,68 @@ const fs = require("fs");
 const path = require("path");
 const employees = [];
 
+const outputPath = path.resolve(__dirname, "output", "crew.html");
+
+function managerInfo() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the name of this manager?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the ID of this manager?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the Email of this manager?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the Office Number of this manager?",
+      },
+    ])
+    .then((answers) => {
+      var { name, id, email, officeNumber } = answers;
+      var manager = Manager(name, id, email, officeNumber);
+      employees.push(manager);
+
+      createCrew();
+    });
+}
+
+function createCrew() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "command",
+        message: "Would you like to add more Crew members?",
+        choices: ["Add an Engineer", "Add an Intern", "Make new Crew"],
+      },
+    ])
+    .then((answers) => {
+      statement = answers.command;
+
+      switch (statement) {
+        case "Add an Engineer":
+          engineerInfo();
+          break;
+        case "Add an Intern":
+          internInfo();
+          break;
+        case "Make new Crew":
+          buildCrew();
+          break;
+      }
+    });
+}
+
 function engineerInfo() {
   inquirer
     .prompt([
@@ -68,33 +130,9 @@ function internInfo() {
       employees.push(intern);
     });
 }
-function managerInfo() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "What is the name of this manager?",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "What is the ID of this manager?",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is the Email of this manager?",
-      },
-      {
-        type: "input",
-        name: "officeNumber",
-        message: "What is the Office Number of this manager?",
-      },
-    ])
-    .then((answers) => {
-      var { name, id, email, officeNumber } = answers;
-      var manager = Manager(name, id, email, officeNumber);
-      employees.push(manager);
-    });
+
+function buildCrew() {
+  fs.writeFileSync(outputPath, mainRender(crewMember), "utf-8");
 }
+
+managerInfo();
