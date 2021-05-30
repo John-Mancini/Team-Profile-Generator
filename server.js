@@ -35,7 +35,7 @@ function managerInfo() {
     ])
     .then((answers) => {
       var { name, id, email, officeNumber } = answers;
-      var manager = Manager(name, id, email, officeNumber);
+      var manager = new Manager(name, id, email, officeNumber);
       employees.push(manager);
 
       createCrew();
@@ -95,9 +95,10 @@ function engineerInfo() {
     ])
     .then((answers) => {
       var { name, id, email, github } = answers;
-      var engineer = Engineer(name, id, email, github);
+      var engineer = new Engineer(name, id, email, github);
       employees.push(engineer);
     });
+  createCrew();
 }
 
 function internInfo() {
@@ -126,9 +127,10 @@ function internInfo() {
     ])
     .then((answers) => {
       var { name, id, email, school } = answers;
-      var intern = Intern(name, id, email, school);
+      var intern = new Intern(name, id, email, school);
       employees.push(intern);
     });
+  createCrew();
 }
 
 function buildCrew() {
