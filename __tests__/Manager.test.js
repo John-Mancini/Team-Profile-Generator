@@ -9,7 +9,7 @@ describe("Manager Class", () => {
       expect(manager.email).toEqual("email@gmail.com");
       expect(manager.officeNumber).toEqual(1);
     });
-    test("Error should appear is no valid arguements", () => {
+    test("Error should appear if no valid arguements", () => {
       const err = () => new Manager();
       expect(err).toThrowError("parameter");
     });
@@ -17,7 +17,7 @@ describe("Manager Class", () => {
       const err = () => new Manager("John");
       expect(err).toThrowError("parameter");
     });
-    test("Error should appear is no valid email", () => {
+    test("Error should appear if no valid email", () => {
       const err = () => new Manager("John", 7);
       expect(err).toThrowError("parameter");
     });
@@ -53,31 +53,31 @@ describe("Manager Class", () => {
   describe("getId", () => {
     test("return the object id as a number", () => {
       const manager = new Manager("John", 7, "email@gmail.com", 1);
-      expect(manager.getId()), toEqual(7);
+      expect(manager.getId()).toEqual(7);
     });
   });
   describe("getName", () => {
     test("return the object name as a string", () => {
       const manager = new Manager("John", 7, "email@gmail.com", 1);
-      expect(manager.getName()), toEqual("John");
+      expect(manager.getName()).toEqual("John");
     });
   });
   describe("getEmail", () => {
     test("return the object email as a string", () => {
       const manager = new Manager("John", 7, "email@gmail.com", 1);
-      expect(manager.getEmail()), toEqual("email@gmail.com");
+      expect(manager.getEmail()).toEqual("email@gmail.com");
     });
   });
   describe("getRole", () => {
     test("return Manager as a string", () => {
       const manager = new Manager("John", 7, "email@gmail.com", 1);
-      expect(manager.getRole()), toEqual("Manager");
+      expect(manager.getRole()).toEqual("Manager");
     });
   });
   describe("getOfficeNumber", () => {
     test("return Manager's office number as a number", () => {
       const manager = new Manager("John", 7, "email@gmail.com", 1);
-      expect(manager.getOfficeNumber()), toEqual(1);
+      expect(manager.getOfficeNumber()).toEqual(1);
     });
   });
 });

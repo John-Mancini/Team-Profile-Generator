@@ -14,7 +14,7 @@ describe("Engineer Class", () => {
       expect(engineer.email).toEqual("email@gmail.com");
       expect(engineer.github).toEqual("John-Mancini");
     });
-    test("Error should appear is no valid arguements", () => {
+    test("Error should appear if no valid arguements", () => {
       const err = () => new Engineer();
       expect(err).toThrowError("parameter");
     });
@@ -22,7 +22,7 @@ describe("Engineer Class", () => {
       const err = () => new Engineer("John");
       expect(err).toThrowError("parameter");
     });
-    test("Error should appear is no valid email", () => {
+    test("Error should appear if no valid email", () => {
       const err = () => new Engineer("John", 7);
       expect(err).toThrowError("parameter");
     });
@@ -68,7 +68,7 @@ describe("Engineer Class", () => {
         "email@gmail.com",
         "John-Mancini"
       );
-      expect(engineer.getId()), toEqual(7);
+      expect(engineer.getId()).toEqual(7);
     });
   });
   describe("getName", () => {
@@ -79,7 +79,7 @@ describe("Engineer Class", () => {
         "email@gmail.com",
         "John-Mancini"
       );
-      expect(engineer.getName()), toEqual("John");
+      expect(engineer.getName()).toEqual("John");
     });
   });
   describe("getEmail", () => {
@@ -90,7 +90,7 @@ describe("Engineer Class", () => {
         "email@gmail.com",
         "John-Mancini"
       );
-      expect(engineer.getEmail()), toEqual("email@gmail.com");
+      expect(engineer.getEmail()).toEqual("email@gmail.com");
     });
   });
   describe("getRole", () => {
@@ -101,7 +101,7 @@ describe("Engineer Class", () => {
         "email@gmail.com",
         "John-Mancini"
       );
-      expect(engineer.getRole()), toEqual("Engineer");
+      expect(engineer.getRole()).toEqual("Engineer");
     });
   });
   describe("getGithub", () => {
@@ -112,7 +112,7 @@ describe("Engineer Class", () => {
         "email@gmail.com",
         "John-Mancini"
       );
-      expect(engineer.getGithub()), toEqual("John-Mancini");
+      expect(engineer.getGithub()).toEqual("John-Mancini");
     });
   });
 });

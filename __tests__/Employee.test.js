@@ -10,7 +10,7 @@ describe("Employee Class", () => {
       expect(employee.id).toEqual(7);
       expect(employee.email).toEqual("email@gmail.com");
     });
-    test("Error should appear is no valid arguements", () => {
+    test("Error should appear ig no valid arguements", () => {
       const err = () => new Employee();
       expect(err).toThrowError("parameter");
     });
@@ -18,7 +18,7 @@ describe("Employee Class", () => {
       const err = () => new Employee("John");
       expect(err).toThrowError("parameter");
     });
-    test("Error should appear is no valid email", () => {
+    test("Error should appear if no valid email", () => {
       const err = () => new Employee("John", 7);
       expect(err).toThrowError("parameter");
     });
@@ -50,25 +50,25 @@ describe("Employee Class", () => {
   describe("getId", () => {
     test("return the object id as a number", () => {
       const employee = new Employee("John", 7, "email@gmail.com");
-      expect(employee.getId()), toEqual(7);
+      expect(employee.getId()).toEqual(7);
     });
   });
   describe("getName", () => {
     test("return the object name as a string", () => {
       const employee = new Employee("John", 7, "email@gmail.com");
-      expect(employee.getName()), toEqual("John");
+      expect(employee.getName()).toEqual("John");
     });
   });
   describe("getEmail", () => {
     test("return the object email as a string", () => {
       const employee = new Employee("John", 7, "email@gmail.com");
-      expect(employee.getEmail()), toEqual("email@gmail.com");
+      expect(employee.getEmail()).toEqual("email@gmail.com");
     });
   });
   describe("getRole", () => {
     test("return Employee as a string", () => {
       const employee = new Employee("John", 7, "email@gmail.com");
-      expect(employee.getRole()), toEqual("Employee");
+      expect(employee.getRole()).toEqual("Employee");
     });
   });
 });

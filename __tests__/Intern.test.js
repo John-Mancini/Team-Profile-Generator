@@ -9,7 +9,7 @@ describe("Intern Class", () => {
       expect(intern.email).toEqual("email@gmail.com");
       expect(intern.school).toEqual("school");
     });
-    test("Error should appear is no valid arguements", () => {
+    test("Error should appear if no valid arguements", () => {
       const err = () => new Intern();
       expect(err).toThrowError("parameter");
     });
@@ -17,7 +17,7 @@ describe("Intern Class", () => {
       const err = () => new Intern("John");
       expect(err).toThrowError("parameter");
     });
-    test("Error should appear is no valid email", () => {
+    test("Error should appear if no valid email", () => {
       const err = () => new Intern("John", 7);
       expect(err).toThrowError("parameter");
     });
@@ -54,31 +54,31 @@ describe("Intern Class", () => {
   describe("getId", () => {
     test("return the object id as a number", () => {
       const intern = new Intern("John", 7, "email@gmail.com", "school");
-      expect(intern.getId()), toEqual(7);
+      expect(intern.getId()).toEqual(7);
     });
   });
   describe("getName", () => {
     test("return the object name as a string", () => {
       const intern = new Intern("John", 7, "email@gmail.com", "school");
-      expect(intern.getName()), toEqual("John");
+      expect(intern.getName()).toEqual("John");
     });
   });
   describe("getEmail", () => {
     test("return the object email as a string", () => {
       const intern = new Intern("John", 7, "email@gmail.com", "school");
-      expect(intern.getEmail()), toEqual("email@gmail.com");
+      expect(intern.getEmail()).toEqual("email@gmail.com");
     });
   });
   describe("getRole", () => {
     test("return Intern as a string", () => {
       const intern = new Intern("John", 7, "email@gmail.com", "school");
-      expect(intern.getRole()), toEqual("Intern");
+      expect(intern.getRole()).toEqual("Intern");
     });
   });
   describe("getSchool", () => {
     test("return Intern's school as a string", () => {
       const intern = new Intern("John", 7, "email@gmail.com", "school");
-      expect(intern.getSchool()), toEqual("school");
+      expect(intern.getSchool()).toEqual("school");
     });
   });
 });
