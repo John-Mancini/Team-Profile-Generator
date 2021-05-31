@@ -11,15 +11,18 @@ function renderHtml(employees) {
       </head>
       <body>
       <header>My Crew</header>
-      <div class="cardBodies">
-        <div class="managerCard">
-          <h1>${employees[0].name}</h1>
-          <h2>Manager</h2>
-          <ul>
-            <li class="ID"></li>
-            <li class="email">Email: <a href="mailto:${employees[0].email}">${employees[0].email}</a></li>
-            <li class="officeNumber">${employees[0].officeNumber}</li>
+      <div class="card" style="width: 18rem;">
+      <div class="card-header bg-primary text-white">
+          <h2 class="card-title text-center">${employees[0].name}</h2>
+          <h3 class="card-subtitle mb-2  text-center text-muted">Manager</h3>
+          </div>
+          <div class="card-body bg-light text-white">
+          <ul class="list-group">
+            <li class="list-group-item">${employees[0].id}</li>
+            <li class="list-group-item">Email: <a href="mailto:${employees[0].email}">${employees[0].email}</a></li>
+            <li class="list-group-item">${employees[0].officeNumber}</li>
           </ul>
+          </div>
         </div>`;
   for (const employee of employees) {
     if (employee.getRole() === "Engineer") {
@@ -32,7 +35,7 @@ function renderHtml(employees) {
     <div class="card-body bg-light text-white">
          <ul class="list-group">
          <li class="list-group-item">${employee.id}</li>
-         <li class="list-group-item list-group-item-action email">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+         <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
          <li class="list-group-item">${employee.github}</li>
         </ul>
     </div>
