@@ -36,7 +36,7 @@ function managerInfo() {
     ])
     .then((answers) => {
       var { name, id, email, officeNumber } = answers;
-      var manager = new Manager(name, id, email, officeNumber);
+      var manager = new Manager(name, parseInt(id), email, officeNumber);
       employees.push(manager);
 
       createCrew();
